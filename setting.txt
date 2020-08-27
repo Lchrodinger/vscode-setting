@@ -1,0 +1,75 @@
+{
+    "git.ignoreLegacyWarning": true,
+    "workbench.iconTheme": "vscode-icons", //启用vscode图标
+    "editor.lineHeight": 26, // 编辑器中的行高
+    "editor.fontSize": 18, // 编辑器中的字体
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true, //编辑器自动保存
+    "python.linting.flake8Enabled": true, //启用flake8，首先需要pip3 install falke8
+    "python.formatting.provider": "yapf", ///启用yapf，首先需要pip3 install yapf
+    "editor.renderIndentGuides": false,
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "path-intellisense.extensionOnImport": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django",
+        "--disable-msg=C0111"
+    ], // 忽略的警告信息
+    // 下面是topper的插入header配置
+    "topper.customTemplateParameters": [
+        {
+            "personalProfile": {
+                "author": "liu yarong",
+                "website": "bulbasaur.github.bitbucket.yababbdadado.com",
+                "copyright": "None \n None",
+                "license": "None",
+                "email": "826279657@qq.com"
+            }
+        },
+        {
+            "officeProfile": {
+                "author": "John Doe",
+                "department": "Product Development",
+                "email": "john.doe@doejohn.com"
+            }
+        }
+    ],
+    "topper.headerTemplates": [
+        {
+            "defaultCStyled": {
+                "headerBegin": "/**",
+                "headerPrefix": "*",
+                "headerEnd": "*/",
+                "template": [
+                    "${headerBegin}",
+                    "${headerPrefix} ${fileName}",
+                    "${headerPrefix} @author ${author}",
+                    "${headerPrefix} @description ${description}",
+                    "${headerPrefix} @created ${createdDate}",
+                    "${headerPrefix} @copyright ${copyright}",
+                    "${headerPrefix} @last-modified ${lastModifiedDate}",
+                    "${headerEnd}"
+                ]
+            }
+        },
+        {
+            "python": {
+                "headerBegin": "# -*- coding: utf-8 -*-",
+                "headerPrefix": "#",
+                "headerEnd": "#",
+                "template": [
+                    "${headerBegin}",
+                    "${headerPrefix} ${fileName}",
+                    "${headerPrefix} @author ${author}",
+                    "${headerPrefix} @description ${description}",
+                    "${headerPrefix} @created ${createdDate}",
+                    "${headerPrefix} @last-modified ${lastModifiedDate}",
+                    "${headerEnd}"
+                ]
+            }
+        }
+    ],
+    "editor.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.fontWeight": "500",
+}
